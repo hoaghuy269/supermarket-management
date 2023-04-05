@@ -352,7 +352,7 @@ public class Selling extends javax.swing.JFrame {
             }
             else {
                 txtarea_bill.setText(txtarea_bill.getText()+ "\n     " + i + "                  " + txt_nameproduct.getText() + "       " + lb_productprice.getText() + "            " + txt_quantityproduct.getText() + "            "  );
-
+                //End Receipt
             }
         }
     }//GEN-LAST:event_btn_addproductMouseClicked

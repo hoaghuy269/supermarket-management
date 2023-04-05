@@ -26,10 +26,10 @@ public class Products extends javax.swing.JFrame {
      */
     public Products() {
         initComponents();
-        SelectStaff();
+        SelectProduct();
     }
     
-    public void SelectStaff() {
+    public void SelectProduct() {
         try {
             Con = DriverManager.getConnection("jdbc:derby://localhost:1527/SupermarketManagement","user1","12345");
             St = Con.createStatement();
@@ -324,7 +324,7 @@ public class Products extends javax.swing.JFrame {
                 int row = add.executeUpdate();
                 JOptionPane.showMessageDialog(this, "Product Added Succesfully");
                 Con.close();
-                SelectStaff();
+                SelectProduct();
             
             } catch (Exception e) {
             e.printStackTrace();
@@ -352,7 +352,7 @@ public class Products extends javax.swing.JFrame {
                 String querry = "Delete from User1.PRODUCT where PRODUCT_ID = "+ sid;
                 Statement add = Con.createStatement();
                 add.executeUpdate(querry);
-                SelectStaff();
+                SelectProduct();
                 JOptionPane.showMessageDialog(this, "Product Delete Successfully");
             } catch (Exception e) {
                 e.printStackTrace();
@@ -383,7 +383,7 @@ public class Products extends javax.swing.JFrame {
                 Statement add = Con.createStatement();
                 add.execute(querry);
                 JOptionPane.showMessageDialog(this, "Update Successfully");
-                SelectStaff();
+                SelectProduct();
                 
             } catch (SQLException e) {
                 e.printStackTrace();

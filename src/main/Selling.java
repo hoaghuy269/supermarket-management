@@ -345,6 +345,9 @@ public class Selling extends javax.swing.JFrame {
         if (txt_nameproduct.getText().isEmpty() || txt_quantityproduct.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Missing Infomation");
         }
+        else if (AvailQty <= Integer.valueOf(txt_quantityproduct.getText())) {
+            JOptionPane.showMessageDialog(this, "Not Enough Product In Stock");
+        }
         else {
             i++;
             if (i==1) {
@@ -374,15 +377,15 @@ public class Selling extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_addcategory3ActionPerformed
 
-    int UpPrice;
+    int AvailQty;
     private void table_productMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_productMouseClicked
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel)table_product.getModel();
         int Myindex = table_product.getSelectedRow();
-        UpPrice = Integer.valueOf(model.getValueAt(Myindex, 2).toString());
         txt_nameproduct.setText(model.getValueAt(Myindex, 1).toString());
         lb_productprice.setText(model.getValueAt(Myindex, 3).toString());
         txt_quantityproduct.setText("1");
+        AvailQty = Integer.valueOf(model.getValueAt(Myindex, 2).toString());
 
     }//GEN-LAST:event_table_productMouseClicked
 
